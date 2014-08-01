@@ -1,0 +1,165 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+body{
+    color: #373737;
+    padding: 0 2em;
+    background: none repeat scroll 0 0 #e2e2e2;
+}
+main{
+    max-width: 960px;
+    background: none repeat scroll 0 0 transparent;
+    margin: 2em auto;
+}
+main header{
+    border: 0 none;
+    bottom: 0;
+    padding-top: 5em;
+    text-align: right;
+    top: 0;
+    margin-right: 40px;
+    position: fixed;
+    width: 180px;
+    padding-bottom: 10px;
+    z-index: 9999;
+    display: block;
+}
+main header hgroup{
+    margin: 0;
+    display: block;
+}
+main header hgroup h1{
+    font-size: 100%;
+    float: right;
+    margin: 0;
+    padding: 10px 0;
+    width: auto;
+    clear: both;
+}
+main header hgroup h1 span a{
+    font-size: 3.6em;
+    color: rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    line-height: 1em;
+    margin-right: -4px;
+    text-align: right;
+    text-decoration: none;
+    -webkit-transition: font-size 200ms, color 400ms;
+    -moz-transition:    font-size 200ms, color 400ms;
+    -ms-transition:     font-size 200ms, color 400ms;
+    -o-transition:      font-size 200ms, color 400ms;
+    transition:         font-size 200ms, color 400ms;
+}
+main header hgroup h1 span a:hover{
+    color : #1982d1;
+}
+main header hgroup h2{
+    color: #aaa;
+    margin: 0 0 15px;
+    width: auto;
+    -webkit-transition: font-size 200ms, color 400ms;
+    -moz-transition:    font-size 200ms, color 400ms;
+    -ms-transition:     font-size 200ms, color 400ms;
+    -o-transition:      font-size 200ms, color 400ms;
+    transition:         font-size 200ms, color 400ms;
+    font-size: 14px;
+    clear: both;
+}
+main header form{
+    bottom: auto;
+    margin: 10px 0;
+    max-width: none;
+    opacity: 0.6;
+    overflow: hidden;
+    position: relative;
+    right: auto;
+    top: auto;
+}
+main header form label{
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); 
+    clip: rect(1px, 1px, 1px, 1px);
+}
+main header form input#query{
+    background: url("../imgs/search.png") no-repeat scroll 5px 6px;
+    float: right;
+    border-radius: 2px;
+    height: 22px;
+    line-height: 1.2em;
+    padding: 4px 10px 4px 28px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+    color: #888;
+    -webkit-transition-duration: 400ms;
+    -webkit-transition-property: width, background;
+    -webkit-transition-timing-function: ease;
+    -moz-transition-duration: 400ms;
+    -moz-transition-property: width, background;
+    -moz-transition-timing-function: ease;
+    -o-transition-duration: 400ms;
+    -o-transition-property: width, background;
+    -o-transition-timing-function: ease;
+    width: 72px;
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    font-weight: 500;
+    width: 72px;
+}
+main header form input#query:focus{
+    background-color: #f9f9f9;
+    width: 135px;
+}
+main header form input#submit{
+    display: none;
+}
+main header nav{
+    background: none repeat scroll 0 0 transparent;
+    box-shadow: none;
+    margin-top: 10px;
+    clear: both;
+    display: block;
+    float: left;
+    width: 100%;
+}
+main header nav ul{
+    font-size: 13px;
+    list-style: none outside none;
+    margin: 0;
+}
+main header nav ul li{
+    float: none;
+    position: relative;
+}
+main header nav ul li a{
+        text-decoration: none;
+        -webkit-transition: font-size 200ms, color 400ms;
+	-moz-transition:    font-size 200ms, color 400ms;
+	-ms-transition:     font-size 200ms, color 400ms;
+	-o-transition:      font-size 200ms, color 400ms;
+	transition:         font-size 200ms, color 400ms;
+            color: #aaa;
+    display: inline-block;
+    line-height: 2.6em;
+    padding: 0;
+        font-weight: bold;
+}
+main section{
+    padding: 0;
+    margin-left: 220px;
+    clear: both;
+}
