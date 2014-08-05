@@ -173,7 +173,7 @@ a:focus, a:active{
     padding:0;
 }
 .home_page_post_area .home_single_post .post_image_area{
-    margin-bottom:41px;
+    /*margin-bottom:41px;*/
 }
 .home_page_post_area .home_single_post .post_image_area .large{
     margin:0;
