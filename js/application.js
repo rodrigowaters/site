@@ -54,19 +54,22 @@ var App = {
             if ($.trim($hash)) {
                 $.ajax({
                     url: $hash,
-                    beforeSend : function(){
+                    beforeSend: function() {
                         $('#modal .modal-conten').empty();
                     },
-                    success : function($response){
+                    success: function($response) {
                         $('#modal .modal-content').addClass('home_page_post_area').html($response);
                     },
-                    complete : function(){
+                    complete: function() {
                         $('#modal').modal('show');
                     }
                 });
             }
         });
         App.get_json();
+        $('#modal').on('hidden.bs.modal', function(e) {
+            window.location.hash = '';
+        });
     }
 };
 $(document).ready(function() {
