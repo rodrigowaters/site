@@ -1,5 +1,9 @@
 [
     {
+        "type": "phrase",
+        "title": "Ring-ding-ding-ding-dingeringeding!"
+    },
+    {
         "type": "post",
         "title": "Campus Party 2014 - Recife",
         "summary": "summary",
