@@ -6,9 +6,9 @@ var App = {
                             <div class="row">\
                                 <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-xs-offset-0 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">\
                                     <div class="single_post_content">\
-                                        <h2><a href="posts/' + $hash + '.html" data-target="#modal" data-toggle="modal">' + $title + '</a></h2>\
+                                        <h2><a href="#posts/' + $hash + '.html">' + $title + '</a></h2>\
                                         <p>' + $summary + '</p>\
-                                        <a href="posts/' + $hash + '.html" data-target="#modal" data-toggle="modal">Ler mais <span>&rarr;</span></a>\
+                                        <a href="#posts/' + $hash + '.html">Ler mais <span>&rarr;</span></a>\
                                     </div>\
                                 </div>\
                             </div>\
@@ -49,9 +49,27 @@ var App = {
         });
     },
     init: function() {
+        $(window).on('hashchange', function() {
+            var $hash = (window.location.hash).replace('#', '');
+            if ($.trim($hash)) {
+                $.ajax({
+                    url: $hash,
+                    beforeSend : function(){
+                        $('#modal .modal-conten').empty();
+                    },
+                    success : function($response){
+                        $('#modal .modal-content').addClass('home_page_post_area').html($response);
+                    },
+                    complete : function(){
+                        $('#modal').modal('show');
+                    }
+                });
+            }
+        });
         App.get_json();
     }
 };
 $(document).ready(function() {
+    window.location.hash = '';
     App.init();
 });
