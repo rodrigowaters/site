@@ -68,7 +68,9 @@ var App = {
         });
         App.get_json();
         $('#modal').on('hidden.bs.modal', function(e) {
+            var $hash = window.location.hash;
             window.location.hash = '';
+            window.location.hash = $hash;
         });
     }
 };
