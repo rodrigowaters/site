@@ -56,13 +56,10 @@ ul.timeline li.open .data {
 	border-top-color: #03bb7a;
 }
 
-
-
-
-
-
-
-
-
-
-
+#view_post .section{
+    padding: 0px;
+}
+#view_post .row img{
+    width: 100%;
+        border-radius: 5px;
+}
