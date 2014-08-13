@@ -33,6 +33,38 @@ $(document).ready(function() {
                 var anim = new TweenLite($(this).closest("li").find(".imageoverlay"), 0.2, {left: "-102%"});
             });
         },
+        apply_phrase: function($phrase_html) {
+            $("<div/>", {
+                "class": "pitems",
+                html: $phrase_html.join('')
+            }).appendTo("#main #publications .pagecontents .col-md-12");
+            $('div#pub-grid').mixitup({
+                layoutMode: 'list',
+                easing: 'snap',
+                transitionSpeed: 600,
+                onMixEnd: function() {
+                    $(".tooltips").tooltip();
+                }
+            }).on('click', 'div.pubmain', function() {
+                var $this = $(this),
+                        $item = $this.closest(".item");
+
+                $item.find('div.pubdetails').slideToggle(function() {
+                    $this.children("i").toggleClass('icon-collapse-alt icon-expand-alt');
+                }, function() {
+                    $this.children("i").toggleClass('icon-expand-alt icon-collapse-alt');
+                });
+            });
+
+            $('#cd-dropdown').dropdownit({
+                gutter: 0
+            });
+
+            $("[name=cd-dropdown]").on("change", function() {
+                var item = this.value;
+                $('div#pub-grid').mixitup('filter', item);
+            });
+        },
         template: {
             post: function($title, $summary, $post) {
                 return '<li id="' + $post + '">\
@@ -55,19 +87,11 @@ $(document).ready(function() {
                         </li>';
             },
             phrase: function($phrase) {
-                return '<div class="home_single_post">\
-                        <div class="post_content_area">\
-                            <div class="row">\
-                                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-xs-offset-0 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">\
-                                    <div class="single_post_content">\
-                                        <div class="sinle_blockquote">\
-                                            <h2><sup>&ldquo;</sup>' + $phrase + '<sup>&rdquo;</sup></h2>\
-                                        </div>\
-                                    </div>\
-                                </div>\
+                return '<div class="item mix cpaper" data-year="2013">\
+                            <div class="pubmain">\
+                                <h4 class="pubtitle">' + $phrase + '</h4>\
                             </div>\
-                        </div>\
-                    </div>';
+                        </div>';
             }
         },
         get_json: function() {
@@ -83,6 +107,7 @@ $(document).ready(function() {
                     }
                 }
                 App.apply_post($post_html);
+                App.apply_phrase($phrase_html);
             });
         },
         reset: function() {
@@ -188,6 +213,7 @@ $(document).ready(function() {
         }
     };
     $("#main #research .pagecontents .col-md-12").empty();
+    $("#main #publications .pagecontents .col-md-12").empty();
     App.SidebarAnim = new TimelineLite({paused: true});
     App.reset();
     App.init();

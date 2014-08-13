@@ -63,3 +63,10 @@ ul.timeline li.open .data {
     width: 100%;
         border-radius: 5px;
 }
+#publications .pitems .pubmain{
+    min-height: 0px;
+    padding: 20px;
+}
+#publications .pitems .pubtitle {
+    padding: 0px;
+}
