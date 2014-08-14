@@ -71,7 +71,7 @@ $(document).ready(function() {
                             <div class="row">\
                                 <div class="col-sm-6 col-md-3">\
                                     <div class="image">\
-                                        <img alt="image" src="images/projects/p3.jpg"  class="img-responsive">\
+                                        <img alt="image" src="images/posts/'+$post+'_1.jpg"  class="img-responsive">\
                                         <div class="imageoverlay">\
                                             <i class="icon icon-search"></i>\
                                         </div>\
